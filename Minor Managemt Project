@@ -1,0 +1,43 @@
+Persons = list()
+
+def AddPerson():
+    id = int(input("Enter Your Id:- "))
+    idFound = False
+    for i in Persons:
+        if i["Id"] == id:
+            print("Sorry Id Exists")
+            idFound = True
+            break
+
+    if  idFound == False:
+        name = input("Enter Your Name")
+        age = int(input("Enter Your Age:- "))
+        return {"Id": id, "Name": name, "Age": age}
+
+Index = -1
+
+while True:
+    Choice = int(input("Press\n1 For Add\n2 For Display\n3 For Exit:- "))
+    if Choice == 1:
+        Index+=1
+        Persons[Index] = AddPerson()
+        print("-------------------")
+
+    elif Choice == 2:
+        print("************************************")
+        if len(Persons) != 0:
+            for i in Persons:
+                for j, k in i.items():
+                    print(j, "-", k, end=" | ")
+                print("\n-------------------------")
+        else:
+            print("There Are No Persons To Show")
+
+
+        print("************************************")
+
+    elif Choice == 3:
+        print("\nThanks For Using\n")
+        break
+    else:
+        print("\nInvalid Choice\n")
