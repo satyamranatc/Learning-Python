@@ -1,0 +1,40 @@
+class Student:
+    School = "IPS"
+    def setDATA(self, N,A):
+        self.Name = N
+        self.Age = A
+    @classmethod
+    def changeSchool(cls, S):
+        cls.School = S
+
+
+    @staticmethod
+    def getData():
+        print("Hello Good ")
+        
+    def getData(self):
+        print("Name: " , self.Name)
+        print("Age: " , self.Age)
+        print("School: " , self.School)
+        print("--------------------------------")
+
+
+Student.changeSchool("PPS")
+S1 = Student()
+S1.setDATA("John", 25)
+S1.getData()
+
+
+S2 = Student()
+S2.setDATA("Jane", 24)
+S2.getData()
+
+
+S3 = Student()
+S3.setDATA("Hina", 22)
+S3.getData()
+
+
+
+
+
