@@ -1,0 +1,64 @@
+class Food:
+    def __init__(self, name, category,price):
+        self.name = name
+        self.category = category
+        self.price = price
+
+    def DisplayData(self):
+        print(self.name)
+        print(self.category)
+        print(self.price)
+        print("--------------------")
+
+Dishes = []
+while True:
+    choice = int(input("Press\n1. For Add\n2. Display\n3. Category\n4. For Remove\n5. Exit: \n"))
+    if choice == 1:
+        name = input("Enter Name: ")
+
+        DishExist = False
+        for i in Dishes:
+            if i.name.lower() == name.lower():
+                print("Dish Already Exists")
+                DishExist = True
+                break
+        
+        if not DishExist:   
+            category = input("Enter Category: ")
+            price = int(input("Enter Price: "))
+            Dishes.append(Food(name,category,price))
+        
+
+
+    elif choice == 2:
+        print("***************************")
+        
+        for dish in Dishes:
+            dish.DisplayData()
+
+        print("***************************")
+   
+    elif choice == 3:
+        Cat = input("Enter The Category: ")
+        for i in Dishes:
+            if i.category.lower() == Cat.lower():
+                print(i.name)
+                print(i.category)
+                print(i.price)
+                print("--------------------")
+
+    elif choice == 4:
+        pass
+
+    elif choice == 5:
+        print("-----------------------")
+        print("Thanks For Using...")
+        print("-----------------------")
+        break
+
+    else:
+        print("-----------------------")
+        print("Wrong Input")
+        print("-----------------------")
+        
+
